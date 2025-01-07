@@ -1,6 +1,6 @@
-KERNEL_SOURCE=https://github.com/ben443/android_kernel_samsung_sm8450_gts8wifi.git
-KERNEL_SOURCE_BRANCH=min
-KERNEL_CONFIG=teacaet_waipio-gki_defconfig
+KERNEL_SOURCE=https://git.codelinaro.org/clo/la/kernel/common.git
+KERNEL_SOURCE_BRANCH=aosp-new/android12-5.10
+KERNEL_CONFIG=gki_defconfig
 KERNEL_IMAGE_NAME=Image
 ARCH=arm64
 
@@ -30,7 +30,7 @@ CUSTOM_GCC_32_SOURCE=https://github.com/mvaisakh/gcc-arm.git
 CUSTOM_GCC_32_BRANCH=gcc-master
 CUSTOM_GCC_32_BIN=arm-linux-androideabi-
 
-ENABLE_KERNELSU=false
+ENABLE_KERNELSU=true
 KERNELSU_INSTALLER=https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh
 KERNELSU_TAG=main
 KSU_EXPECTED_SIZE=
@@ -38,13 +38,13 @@ KSU_EXPECTED_HASH=
 BUILD_KERNELSU_BOOT_IMG=false
 KERNELSU_SOURCE_BOOT_IMAGE=
 
-DISABLE-LTO=true
-DISABLE_CC_WERROR=false
+DISABLE-LTO=false
+DISABLE_CC_WERROR=true
 ADD_KPROBES_CONFIG=false
 ADD_OVERLAYFS_CONFIG=false
 ENABLE_CCACHE=true
 NEED_DTBO=false
-BUILDER_HOST=ci
+BUILDER_HOST=xprateek_gh_actions
 
 TC_CUSTOM_CMDS:CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu-
 EXTRA_CMDS:CC=clang LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf STRIP=llvm-strip
